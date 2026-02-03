@@ -1,0 +1,482 @@
+/* Reset and base */
+*{
+    box-sizing: border-box;
+}
+:root{
+    --max-width: 1000px;
+    --text-dark: #000000;
+    --text-light: #ffffff;
+    --gray-nav: #6b7280;
+    --gray-nav-dark: #4b5563;
+    --blue-dark: #003d82;
+    --blue-light: #5ba3e0;
+}
+body{
+    margin:0;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    color:var(--text-dark);
+    background:#ffffff;
+    line-height:1.6;
+}
+
+/* Keep navbar markup as-is; simple layout so we don't change behavior */
+.navbar{
+    background: var(--gray-nav);
+    box-shadow: 0 2px 8px rgba(107, 114, 128, 0.2);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+.navbar ul{
+    list-style: none;
+    margin:0;
+    padding:8px 16px;
+    display:flex;
+    gap:8px;
+}
+.navbar a{
+    color:var(--text-light);
+    padding:10px 16px;
+    text-decoration:none;
+    display:inline-block;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+.navbar a:hover{
+    background: rgba(255,255,255,0.15);
+}
+.navbar a.active{
+    background: var(--gray-nav-dark);
+    font-weight:600;
+}
+
+/* Section layout: each major block takes full viewport height */
+.presentation,
+.Parcours,
+.projet,
+.veille,
+.E4{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 10px;
+}
+
+.section-content {
+    border: none;
+    border-radius: 10px;
+    padding: 40px 30px;
+    max-width: var(--max-width);
+    width: 100%;
+}
+
+.presentation .section-content {
+    max-width: 90%;
+    padding: 60px 80px;
+}
+
+.presentation{
+    background: #ffffff;
+    text-align:center;
+}
+.presentation h1{
+    font-size: clamp(2rem, 6vw, 4rem);
+    margin:0 0 16px 0;
+    color: var(--blue-dark);
+}
+.presentation p{
+    max-width:var(--max-width);
+    margin:0 auto;
+    color:var(--text-dark);
+    font-size:1.1rem;
+}
+
+.presentation-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    text-align: left !important;
+    padding: 60px 80px !important;
+}
+
+.presentation-content h1 {
+    flex: 0 0 auto;
+    font-size: 3rem;
+    margin: 0;
+    white-space: nowrap;
+    color: var(--blue-dark);
+}
+
+.presentation-text {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.presentation-content p {
+    flex: 1 1 auto;
+    margin: 0;
+    max-width: none;
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Content container used across sections */
+.Parcours, .projet, .veille, .E4{
+    flex-direction: column;
+    width:100%;
+}
+
+/* Presentation: white */
+#presentation{
+    background: #ffffff;
+}
+
+/* Parcours scolaire: white background */
+#parcours-scolaire{
+    background: #ffffff;
+    color: var(--text-dark);
+}
+#parcours-scolaire > div h3, #parcours-scolaire > div p{
+    color: var(--text-dark);
+}
+#parcours-scolaire p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Parcours professionnel: white background */
+#parcours-professional{
+    background: #ffffff;
+    color: var(--text-dark);
+}
+#parcours-professional > div h3, #parcours-professional > div p{
+    color: var(--text-dark);
+}
+#parcours-professional p {
+    font-size: 1.5rem;
+    line-height: 1.7;
+}
+
+/* Projets: white background */
+#projets{
+    background: #ffffff;
+    color: var(--text-dark);
+}
+#projets > p{
+    color: var(--text-dark);
+}
+
+/* Veille: white background */
+#veille{
+    background: #ffffff;
+    color: var(--text-dark);
+}
+#veille > p{
+    color: var(--text-dark);
+}
+
+/* E4: white background */
+#e4{
+    background: #ffffff;
+    color: var(--text-dark);
+}
+
+/* Heading styles */
+.Parcours h2, .projet h2, .veille h2, .E4 h2{
+    width:100%;
+    max-width:var(--max-width);
+    margin:0 auto 20px auto;
+    font-size:1.8rem;
+    color: var(--blue-dark);
+}
+
+h1, h2, h3 {
+    color: var(--blue-dark);
+}
+
+/* Content + links as styled boxes */
+.Parcours > div, .projet > p, .veille > div, .E4 > a{
+    max-width:var(--max-width);
+    margin:8px auto;
+}
+
+/* Align BTS and BAC sections to the left */
+#parcours-scolaire .BTS, #parcours-scolaire .BAC{
+    text-align: left;
+    margin-left: 40px ;
+    margin-right: auto ;
+    width: auto;
+}
+
+.school-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.school-logo img {
+    width: 80px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.school-info {
+    flex: 1 1 auto;
+}
+
+.articles-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.article-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 250px;
+    max-width: 280px;
+}
+
+.article-date {
+    font-weight: 600;
+    color: var(--blue-dark);
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.article-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.article-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-item a:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.e4-image {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.e4-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Link box styling */
+.cv, .stage1, .stage2, .veille1, .E4 a{
+    display: inline-block;
+}
+.cv a, .stage1 a, .stage2 a, .veille1 a, .E4 a{
+    display: inline-block;
+    padding: 12px 24px;
+    background: #000000;
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.cv a:hover, .stage1 a:hover, .stage2 a:hover, .veille1 a:hover, .E4 a:hover{
+    background: #333333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.entreprise-section {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.entreprise-logo img {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.entreprise-text p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Override for dark sections */
+#parcours-professional .cv a, #parcours-professional .stage1 a, #parcours-professional .stage2 a,
+#e4 .E4 a{
+    background: #000000;
+    color: var(--text-light);
+}
+#parcours-professional .cv a:hover, #parcours-professional .stage1 a:hover, #parcours-professional .stage2 a:hover,
+#e4 .E4 a:hover{
+    background: #333333;
+}
+
+a[type="download"], a{
+    color:#000000;
+}
+
+/* Make content readable on small screens */
+@media (max-width:640px){
+    .navbar ul{ padding:6px 10px; }
+    .presentation{ padding:28px 12px; }
+    .Parcours, .projet, .veille, .E4{ padding:30px 12px; }
+    .cv a, .stage1 a, .stage2 a, .veille1 a, .E4 a{
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* small utilities */
+.center{ margin-left:auto; margin-right:auto; }
+.center{ margin-left:auto; margin-right:auto; }
+
+/* Gallery modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.gallery-box {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0;
+    display: inline-block;
+    background: var(--blue-light);
+}
+
+.gallery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.rapport-stage {
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 280px;
+}
+
+.rapport-stage h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1em;
+}
+
+.gallery-box img {
+    display: block;
+}
+
+/* Footer */
+.footer {
+    background: var(--gray-nav);
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 50px;
+    box-shadow: 0 -2px 8px rgba(107, 114, 128, 0.2);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
