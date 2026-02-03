@@ -50,13 +50,7 @@ body{
     font-weight:600;
 }
 
-.trello-section{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:40px 10px;
-}
+
 /* Section layout: each major block takes full viewport height */
 .presentation,
 .Parcours,
@@ -486,4 +480,12 @@ a[type="download"], a{
 .social-links a:hover {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
+}
+
+.trello-section{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 10px;
 }
